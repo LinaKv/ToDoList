@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { getStrDate } from "../config/setting";
 
 function ToDoForm({ handleAdd }) {
   const [text, setText] = useState("");
@@ -7,10 +8,13 @@ function ToDoForm({ handleAdd }) {
   const handleChange = (e) => setText(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const newTask = {
       text,
+      date: getStrDate(),
     };
     handleAdd(newTask);
+    console.log(newTask);
 
     setText("");
   };
