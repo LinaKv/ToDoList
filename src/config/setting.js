@@ -12,6 +12,14 @@ export const getLocalStorage = () => {
   }));
 };
 
+export const deleteAllFromLocalStorage = () => {
+  localStorage.clear();
+};
+
+export const deleteTaskFromLocalStorage = (task) => {
+  localStorage.removeItem(task.id);
+};
+
 export const getStrDate = () => {
   const date = new Date();
   const day = date.getDate();
